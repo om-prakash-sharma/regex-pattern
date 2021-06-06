@@ -1,5 +1,5 @@
 {
-  "name": "regex-pattern",
+  "name": "validate-regex",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/om-prakash-sharma/regex-pattern.git"
+    "url": "git+https://github.com/om-prakash-sharma/validate-regex.git"
   },
-  "keywords": ["regex", "regex-pattern"],
-  "author": "",
+  "keywords": ["regex", "validate-regex"],
+  "author": "Om Prakash Sharma <om.sharma@outlook.in>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/om-prakash-sharma/regex-pattern/issues"
+    "url": "https://github.com/om-prakash-sharma/validate-regex/issues"
   },
-  "homepage": "https://github.com/om-prakash-sharma/regex-pattern#readme"
+  "homepage": "https://github.com/om-prakash-sharma/validate-regex"
 }
