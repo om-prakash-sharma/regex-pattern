@@ -1,6 +1,6 @@
 {
   "name": "validate-regex",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/om-prakash-sharma/validate-regex.git"
   },
-  "keywords": ["regex", "validate-regex"],
+  "keywords": [
+    "regex",
+    "validate-regex"
+  ],
   "author": "Om Prakash Sharma <om.sharma@outlook.in>",
   "license": "MIT",
   "bugs": {
