@@ -1,8 +1,9 @@
 'use strict'
 
-const patterns = require("./pattern");
+const patterns = require("./lib/pattern");
+const RegexPattern = require("./lib/.");
 
-class RegPattern {
+class Regex {
 
     static OP = {
         GLOBAL: 'g',
@@ -10,56 +11,20 @@ class RegPattern {
         MULTILINE: 'm'
     }
 
-    constructor(statement = "", pattern = null, options = {}) {
-        this.statement = statement;
-        this.pattern = pattern;
-        this.flag = "g";
-        if (options.flags && Array.isArray(options.flags) && options.flags.length) {
-            this.flag = Array.from(new Set(options.flags)).join("");
-        }
-        this.debug = options.debug || false;
-    }
-
-    validate() {
-        try {
-            if (this.pattern) {
-                return new RegExp(this.pattern, this.flag).test(this.statement);
-            }
-            return false;
-        } catch (error) {
-            logs(error, true);
-            return false;
+    static valid(statement = "", pattern = null, options = {}) {
+        if (pattern) {
+            return new RegexPattern(statement, pattern, options).validate();
         }
     }
 
-    groups() {
-        let output = {};
-        try {
-            if (this.pattern) {
-                const regexObj = new RegExp(this.pattern, this.flag);
-                const result = regexObj.exec(this.statement);
-                if (result && result.groups) {
-                    return result.groups;
-                }
-            }
-        } catch (error) {
-            logs(error, true);
-        }
-        return output
-    }
-
-    logs(msg = "", isError = false) {
-        if (this.debug && msg) {
-            if (isError) {
-                console.error("regex-pkg error> ", msg && msg.message ? msg.message : msg);
-            } else {
-                console.info("regex-pkg > ", msg);
-            }
+    static groups(statement = "", pattern = null, options = {}) {
+        if (pattern) {
+            return new RegexPattern(statement, pattern, options).getAvailableGroups();
         }
     }
 }
 
 module.exports = {
     patterns,
-    RegPattern
+    Regex
 };
