@@ -10,12 +10,17 @@ This regex-pattern is used to ***match***, ***validate*** and **extract data** f
 
 ## Installation
 
-To use this, you need to first install **NodeJS** *12.x or higher* in your system.
+   To install using npm
 
     $ npm install validate-regex
+   
+   To install using yarn
+
+    $ yarn add validate-regex
 
 ## Usage 
 To match or validate text/string, use **valid** function
+```js
 
     const { Regex, patterns } = require("validate-regex");
     const  OP = Regex.OP;
@@ -29,8 +34,10 @@ To match or validate text/string, use **valid** function
     // To validate boolean value
     const  isBoolean = Regex.valid("abc", patterns.BOOLEAN);
     
+   ``` 
     
 To extract matched data/value from string or text, use **groups** function
+```js
 
     const { Regex, patterns } = require("validate-regex");
     const  OP = Regex.OP;
@@ -42,6 +49,4 @@ To extract matched data/value from string or text, use **groups** function
     // To extract email address value
     const { email, domain } = Regex.groups("dev@xyz.io", patterns.EMAIL, { flags: [OP.CASE_INSENSITIVE] });
     // output : email = dev, domain = xyz.io
-    
-    
     
